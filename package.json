@@ -1,0 +1,33 @@
+{
+  "name": "eshop",
+  "version": "1.0.0",
+  "description": "MERN Full Stack ecommerce app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon server/server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node server/seeder",
+    "data:destroy": "node server/seeder -d"
+  },
+  "keywords": [
+    "ecommerce",
+    "node",
+    "react"
+  ],
+  "author": "Felipe Stuart",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongoose": "^5.11.17"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  }
+}
