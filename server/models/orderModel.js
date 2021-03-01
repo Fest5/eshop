@@ -6,15 +6,6 @@ const orderSchema = mongoose.Schema({
         required: true,
         ref: 'User'
     },
-    password: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
     orderItems: [
         {
             name: { type: String, required: true },
