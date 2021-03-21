@@ -10,6 +10,7 @@ import {
   listProductDetails,
   createProductReview,
 } from "../actions/productActions"
+import { PRODUCT_DETAILS_RESET } from '../constants/productConstants'
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
 
 
@@ -40,6 +41,10 @@ const ProductScreen = ({ history, match }) => {
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
     }
     dispatch(listProductDetails(match.params.id))
+
+    return function cleanup () {
+      dispatch({ type: PRODUCT_DETAILS_RESET })
+    }
   }, [dispatch, match, successProductReview])
 
   const addToCartHandler = () => {
