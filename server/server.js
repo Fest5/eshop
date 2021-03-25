@@ -30,7 +30,11 @@ app.use(cors())
 
 app.options('*', cors())
 
-app.use(helmet())
+app.use(
+    helmet({
+      contentSecurityPolicy: false,
+    })
+  );
 
 const limiter = rateLimit({
     max: 100,
